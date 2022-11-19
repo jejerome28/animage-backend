@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.homepage {
+    display: flex;
+    flex-direction: row;
+}
+
+.toplist {
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.toplist > * {
+    margin-bottom: 2rem;
+}
+
+.card_wrap {
+    display: flex;
+    flex-direction: row;
+    border: solid 2px red;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px black;
+    width: 50vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 25rem;
+    height: 25rem;
+    margin-bottom: 3rem;
+}
+
+.card ul > * {
+    margin-bottom: 1rem;
+}
+
+.card img {
+    width: 100%;
+    max-width: 200px;
+    height: 300px;
+    margin-bottom: 1rem;
+}
+
+.details_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* align-content: center; */
+}
+
+.header {
+    text-align: center;
+}
+.casts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 75vh;
+    height: 80vh;
+    border: solid 2px green;
+    overflow-y: auto;
+}
+.cast {
+    display: flex;
+    align-items: center;
+    border: solid 2px black;
+    width: 12em;
+    margin-bottom: .75em;
+}
+
+.cast img {
+    width: 50px;
+    height: 75px;
+}
+
+.wrapper_cast_comment {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.wrapper_comment {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid yellow;
+}
+
+.wrapper_comment .comments {
+    width: 45vh;
+    border: solid 2px blue;
+    margin-bottom: 1em;
+}
+
+.wrapper_comment .wrap {
+    width: 50vh;
+    height: 55vh;
+    border: 2px solid orange;
+    overflow-y: auto;
+}
+
+.comments_made_wrap {
+    width: 50vh;
+    height: 55vh;
+    overflow-y: auto;
+    border: 2px solid pink;
+}
+.comments_made {
+    width: 45vh;
+    border: solid 2px blue;
+    margin-bottom: 1em;
+}

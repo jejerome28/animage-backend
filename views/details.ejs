@@ -1,0 +1,51 @@
+<%- include('headers/header.ejs') %>
+<body>
+    <a href="/">Go back</a>
+    <div class="details_content">
+
+        
+        <div class="header">
+            <h2><%= ani_details.title %> </h2>
+            <h2><%= ani_details.title_english %> </h2>
+            <img src="<%= ani_details.images.jpg.large_image_url%> " alt="<%= ani_details.title %> picture ">
+            <p><%= ani_details.synopsis %> </p>
+
+        </div>
+
+        <div class="wrapper_cast_comment">
+
+            <div class="casts">
+                <% for(let cast of cast_details) { %>
+                    <div class="cast">
+                        <img src="<%= cast.character.images.jpg.image_url %>" alt="<%= cast.character.name %> picture">
+                        <span> <%= cast.character.name %> - <%= cast.role %></span>
+                    </div>
+                <% } %>
+            </div>
+            
+            <div class="wrapper_comment">
+                <div class="wrap">
+                    <% for(let comment of comments) { %> 
+                    <div class="comments">
+                        <p><%= comment.body %> </p>
+                        <span><a href="/profile/<%= comment.user_id.id %> "><%= comment.user_id.username %></a> </span>
+                    </div>
+                    <% } %> 
+                </div>
+                
+                <div class="add_comment">
+                    
+                    <form action="<%= ani_details.mal_id %>/post_comment" method="post">
+                        <textarea name="addComment" id="addComment" cols="30" rows="10" maxlength="150" placeholder="Describe this anime in 150 characters"></textarea><br>
+                        <span id="counter">0</span><span>/150</span>
+                        <button type="submit">comment!</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="/public/script.js"></script>
+</body>
+</html>

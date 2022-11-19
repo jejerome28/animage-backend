@@ -1,0 +1,19 @@
+<nav class="navbar">
+    <% if (logged) { %>
+        <h1>Welcome back! <%= logged.username %>
+        </h1>
+        <form action="/logout?_method=DELETE" method="post">
+            <button type="submit">Log out</button>
+            <span><a href="/profile/<%= logged.id %> ">Profile</a></span>
+        </form>
+        <% } else {%>
+            <form action="/login" method="post">
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username">
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password">
+                <button type="submit">Login</button>
+                <a href="/signup">No account?, create one.</a>
+            </form>
+        <% } %>
+</nav>

@@ -1,0 +1,52 @@
+<%- include('headers/header.ejs') %> 
+<body>
+<%- include('navbar.ejs') %> 
+
+    <h1>AniMage</h1>
+    <form action="/search" method="post">
+        <label for="search">Search: </label>
+        <input type="text" name="search" id="search">
+        <button type="submit">Go</button>
+    </form>
+    
+
+    <div class="homepage">
+        <div class="toplist top_anime">
+            <h1>Top Popular Anime</h1>
+                
+            <div class="card_wrap">
+                
+                <% for( let anime of animes ) { %>
+                    
+                    <div class="card">
+                        
+                        <ul>
+                            <a href="/details/<%= anime.mal_id %> " target="_blank" rel="noopener noreferrer"><img src="<%= anime.images.jpg.large_image_url %> " alt="<%= anime.title %> picture "></a>
+                            <li><%= anime.title %> </li>
+                        </ul>
+                    </div>
+                <% } %>
+            </div>
+
+        </div>
+
+        <div class="toplist season_anime">
+            <h1>Top Season Anime</h1>
+            <div class="card_wrap">
+                
+            <% for( let season of seasonAnime ) { %>
+                <div class="card">
+
+                <ul>
+                    <a href="/details/<%= season.mal_id %> " target="_blank" rel="noopener noreferrer"><img src="<%= season.images.jpg.large_image_url %> " alt="<%= season.title %> picture "></a>
+                    <li><%= season.title %> </li>
+                </ul>
+
+                </div>
+            <% } %>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

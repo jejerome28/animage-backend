@@ -1,0 +1,17 @@
+<%- include('headers/header.ejs') %> 
+<body>
+<%- include('navbar.ejs') %> 
+    <h1>User profile</h1>
+
+    <h2>Comments: </h2>
+    <div class="comments_made_wrap">
+        <% for(let comment of profile.comments){ %> 
+        <div class="comments_made">
+            <p><%= comment.body %> </p>
+        </div>
+        <% } %> 
+    </div>
+ 
+    
+</body>
+</html>

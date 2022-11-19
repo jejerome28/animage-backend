@@ -1,0 +1,14 @@
+<%- include('headers/header.ejs') %> 
+<body>
+    <h2>Search Results for: <%= search %> </h2>
+    <a href="/">Go back</a>
+    <div class="result_content">
+        <ul>
+            <% for( let result of ani_results) { %>
+                <a href="/details/<%= result.mal_id %> "><img src="<%= result.images.jpg.image_url %> " alt="<%= result.title %> picture"></a>
+                <li><%= result.title %> </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>
